@@ -1,0 +1,64 @@
+project:
+  software:
+    name:
+    version:
+  building:
+    type:
+    location:
+    climate_zone:
+    time_scale:
+  outputs:
+    - name: cooling_load
+      unit:
+      time_step:
+    - name: heating_load
+      unit:
+      time_step:
+
+inputs:
+  meteorology:
+    weather_file:
+    source:
+    time_range:
+    notes:
+  geometry:
+    floors:
+    orientation:
+    zones:
+  envelope:
+    walls:
+    roof:
+    floor:
+    windows:
+  internal_gains:
+    occupancy:
+    lighting:
+    equipment:
+  schedules:
+    occupancy:
+    lighting:
+    equipment:
+    hvac:
+  operation:
+    setpoints:
+    ventilation:
+    infiltration:
+  hvac_system:
+    system_type:
+    efficiency:
+    control_strategy:
+
+validation:
+  reference_curve:
+    type: "measured | literature"
+    source:
+    period:
+    resolution:
+  metrics:
+    - name: MBE
+      threshold:
+    - name: CVRMSE
+      threshold:
+    - name: NMBE
+      threshold:
+  calibration_notes:
