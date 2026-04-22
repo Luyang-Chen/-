@@ -56,9 +56,12 @@ validation:
     resolution:
   metrics:
     - name: MBE
+      description: "未归一化平均偏差"
       threshold:
     - name: CVRMSE
+      description: "变异系数均方根误差"
       threshold:
     - name: NMBE
+      description: "归一化平均偏差（MBE 归一化）"
       threshold:
   calibration_notes:
