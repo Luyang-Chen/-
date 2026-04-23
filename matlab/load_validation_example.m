@@ -3,8 +3,8 @@
 % Description: Compare simulated and measured cooling/heating loads, compute
 % MBE(%) and CVRMSE(%), then plot the curves.
 % 用法：直接运行本脚本。若 data/ 下存在 CSV 文件则读取，否则生成示例数据。
-% Usage: Run this script directly. If CSV files exist under data/, they are
-% read; otherwise example data are generated.
+% Usage: Run this script directly. If the CSV input files exist under data/,
+% they are read; otherwise example data are generated.
 
 clear;
 clc;
@@ -81,7 +81,7 @@ function [timeVector, coolingLoad, heatingLoad] = extractLoads(dataTable)
     else
         timeVector = dataTable{:, timeIdx};
         if ~isdatetime(timeVector)
-            if iscellstr(timeVector) || isstring(timeVector) || ischar(timeVector)
+            if isstring(timeVector) || ischar(timeVector) || (iscell(timeVector) && all(cellfun(@ischar, timeVector)))
                 timeVector = datetime(timeVector);
             elseif isnumeric(timeVector) && all(timeVector > 50000)
                 timeVector = datetime(timeVector, 'ConvertFrom', 'datenum', 'Format', 'yyyy-MM-dd HH:mm');
