@@ -1,6 +1,10 @@
 % load_validation_example.m
 % 说明：比较仿真与实测冷热负荷曲线，计算 MBE(%) 与 CVRMSE(%)，并绘图输出。
+% Description: Compare simulated and measured cooling/heating loads, compute
+% MBE(%) and CVRMSE(%), then plot the curves.
 % 用法：直接运行本脚本。若 data/ 下存在 CSV 文件则读取，否则生成示例数据。
+% Usage: Run this script directly. If CSV files exist under data/, they are
+% read; otherwise example data are generated.
 
 clear;
 clc;
@@ -66,7 +70,7 @@ function [timeVector, coolingLoad, heatingLoad] = extractLoads(dataTable)
     heatIdx = find(contains(variableNames, "heat"), 1);
 
     if isempty(coolIdx) || isempty(heatIdx)
-        error('输入文件需包含 cooling 与 heating 负荷列。');
+        error('输入文件需包含 cooling 与 heating 负荷列 (cooling/heating columns are required).');
     end
 
     coolingLoad = dataTable{:, coolIdx};
