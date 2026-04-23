@@ -84,7 +84,7 @@ function [timeVector, coolingLoad, heatingLoad] = extractLoads(dataTable)
             if isstring(timeVector) || ischar(timeVector) || (iscell(timeVector) && all(cellfun(@ischar, timeVector)))
                 timeVector = datetime(timeVector);
             elseif isnumeric(timeVector) && all(timeVector > 50000)
-                timeVector = datetime(timeVector, 'ConvertFrom', 'datenum', 'Format', 'yyyy-MM-dd HH:mm');
+                timeVector = datetime(timeVector, 'ConvertFrom', 'datenum');
             end
         end
     end
