@@ -70,7 +70,7 @@ function [timeVector, coolingLoad, heatingLoad] = extractLoads(dataTable)
     heatIdx = find(contains(variableNames, "heat"), 1);
 
     if isempty(coolIdx) || isempty(heatIdx)
-        error('输入文件需包含 cooling 与 heating 负荷列 (cooling/heating columns are required).');
+        error('Input file must include cooling and heating load columns.');
     end
 
     coolingLoad = dataTable{:, coolIdx};
