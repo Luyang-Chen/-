@@ -2,7 +2,7 @@
 % 说明：比较仿真与实测冷热负荷曲线，计算 MBE(%) 与 CVRMSE(%)，并绘图输出。
 % Description: Compare simulated and measured cooling/heating loads, compute
 % MBE(%) and CVRMSE(%), then plot the curves.
-% 用法：直接运行本脚本。若 data/ 下存在 CSV 文件则读取，否则生成示例数据。
+% 用法：直接运行本脚本。若data/下存在 CSV 文件则读取，否则生成示例数据。
 % Usage: Run this script directly. If the CSV input files exist under data/,
 % they are read; otherwise example data are generated.
 
